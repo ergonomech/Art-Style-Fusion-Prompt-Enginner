@@ -1,14 +1,9 @@
 
 # Art Style Fusion Prompt Engineering
-![Header](assets/logo.png)
 
 ## Overview
 
-Art Style Fusion Prompt Engineering is a versatile Gradio-based application that allows users to create rich, detailed prompts by combining various art styles, image descriptions, and artist inspirations. It is particularly useful for artists, writers, and AI enthusiasts looking to generate creative content with detailed prompts suitable for text to image generators that use T5 text encoders such as Flux but can further convert prompts into Adobe and Stable Diffusion-compatible (SDXL) format.
-
-It uses OpenAI or OpenRouter (or a mix of both) to access both text and image-based AI models, providing a seamless experience for generating prompts. OpenRouter allows for more uncensored and experimental prompts, while OpenAI provides a more controlled and curated experience with a better vision model.
-
-Futher adaptations will be made to use Claude and Ollama but this was so sucessful and cost effective that it was decided to keep it as is for now.
+Art Style Fusion Prompt Engineering is a versatile Gradio-based application that allows users to create rich, detailed prompts by combining various art styles, image descriptions, and artist inspirations. It is particularly useful for artists, writers, and AI enthusiasts looking to generate creative content with detailed prompts suitable for T5 text encoders and Stable Diffusion.
 
 ## Installation
 
@@ -18,7 +13,7 @@ You can install the required dependencies using either `pip` or `conda`.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ergonomech/Art-Style-Fusion-Prompt-Enginner.git
+   git clone https://github.com/your-repo/Art-Style-Fusion-Prompt-Engineering.git
    cd Art-Style-Fusion-Prompt-Engineering
    ```
 
@@ -47,7 +42,7 @@ You can install the required dependencies using either `pip` or `conda`.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/ergonomech/Art-Style-Fusion-Prompt-Enginner.git
+   git clone https://github.com/your-repo/Art-Style-Fusion-Prompt-Engineering.git
    cd Art-Style-Fusion-Prompt-Engineering
    ```
 
@@ -59,7 +54,7 @@ You can install the required dependencies using either `pip` or `conda`.
 
 ## Usage
 
-1. Make sure you have the necessary API keys and configuration details. Update the `.env` file with your OpenAI and OpenRouter API keys. These variables can also be loaded from your operating system environment variables as priority.
+1. Make sure you have the necessary API keys and configuration details. Update the `.env` file with your OpenAI and OpenRouter API keys.
 
 2. Start the application by running:
    ```bash
@@ -83,11 +78,9 @@ You can install the required dependencies using either `pip` or `conda`.
 
 - **Prompt Generation**: Combine the selected style, image description, and artist suggestion into a cohesive prompt.
   ![Prompt Generation](assets/prompt_generation.png)
-  ![Prompt Generation Result ComfyUI](assets/prompt_generation_used_comfyUI.png)
 
 - **Stable Diffusion Conversion**: Convert prompts into Stable Diffusion-compatible format for further use.
   ![Stable Diffusion Prompt](assets/sd_prompt.png)
-  ![Stable Diffusion Prompt](assets/sd_prompt_used_comfyUI.png)
 
 ## Credits
 
