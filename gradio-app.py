@@ -66,7 +66,7 @@ def build_ui():
             openrouter_url = gr.Textbox(label="OpenRouter URL", value=get_env_variable('OPENROUTER_URL', 'https://openrouter.ai/api/v1/chat/completions'))
             temp = gr.Slider(label="Temperature", value=float(get_env_variable('TEMPERATURE', '0.7')), minimum=0.1, maximum=1.0)
             top_p = gr.Slider(label="Top P", value=float(get_env_variable('TOP_P', '0.9')), minimum=0.1, maximum=1.0)
-            token_limit = gr.Slider(label="Token Limit", value=int(get_env_variable('TOKEN_LIMIT', '2048')), minimum=1000, maximum=4096)
+            token_limit = gr.Slider(label="Token Limit", value=int(get_env_variable('TOKEN_LIMIT', '8192')), minimum=1000, maximum=8192)
             openai_model = gr.Textbox(label="OpenAI Prompt Model", value=get_env_variable('OPENAI_PROMPT_MODEL', 'gpt-4o'), interactive=True)
             openai_vision = gr.Textbox(label="OpenAI Vision Model", value=get_env_variable('OPENAI_VISION_MODEL', 'gpt-4o-mini'), interactive=True)
             openrouter_model = gr.Textbox(label="OpenRouter Prompt Model", value=get_env_variable('OPENROUTER_PROMPT_MODEL', 'cohere/command-r-08-2024'), interactive=True)
@@ -114,7 +114,7 @@ def build_ui():
         def add_nsfw_context(prompt, nsfw):
             if nsfw:
                 prompt += f" {nsfw_append}"
-            return prompt + f" {no_semantic_explanation} Fit answer appropriately between 150 to 2000 characters."
+            return prompt + f" {no_semantic_explanation} Fit answer appropriately under 1000 characters."
 
         def handle_style_desc(api_key, api_url, model, temp, top_p, token_limit, style, nsfw):
             api = API(api_key, api_url, model, token_limit, temp, top_p)
