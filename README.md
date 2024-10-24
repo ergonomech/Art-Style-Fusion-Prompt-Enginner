@@ -43,7 +43,9 @@ You can install the required dependencies using either `pip` or `conda`.
    pip install gradio requests pillow python-dotenv
    ```
 
-### Using Conda
+### Using Conda (recommnended)
+
+0. Make sure you have Conda installed. If not, you can download it from [here](https://docs.conda.io/en/latest/miniconda.html).
 
 1. Clone the repository:
    ```bash
@@ -53,7 +55,7 @@ You can install the required dependencies using either `pip` or `conda`.
 
 2. Create a new Conda environment and install dependencies:
    ```bash
-   conda create --name art-style-fusion python=3.10 gradio requests pillow python-dotenv
+   conda create --name art-style-fusion python=3.10 requests pillow python-dotenv conda-forge::gradio
    conda activate art-style-fusion
    ```
 

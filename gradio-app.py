@@ -48,7 +48,7 @@ art_styles = get_env_variable("ART_STYLES", "").split(",")
 
 # Gradio UI setup
 def build_ui():
-    with gr.Blocks(theme='monochrome', analytics_enabled=False, css=".gradio-container { max-width: 100%; }") as app:
+    with gr.Blocks(theme='gradio/monochrome', analytics_enabled=False, css=".gradio-container { max-width: 100%; }") as app:
         logo_base64 = get_logo_base64()
         gr.HTML(f"""
         <div style="text-align: center;">
