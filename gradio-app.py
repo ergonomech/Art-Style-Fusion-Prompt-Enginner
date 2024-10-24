@@ -5,6 +5,7 @@
 import gradio as gr
 import os
 import base64
+import platform
 from utils.api import API
 from utils.image import Img
 from utils.logger import setup_log
@@ -14,9 +15,30 @@ from dotenv import load_dotenv
 load_dotenv()
 logger = setup_log()
 
+def get_hostname_and_os():
+    # Detect the operating system
+    os_type = platform.system()
+    
+    # Get the hostname based on the OS
+    if os_type == 'Windows':
+        hostname = os.getenv('COMPUTERNAME')
+    else:
+        hostname = os.uname().nodename
+    
+    return os_type, hostname
+
+# Example usage
+os_type, hostname = get_hostname_and_os()
+print(f"Operating System: {os_type}")
+print(f"Hostname: {hostname}")
+
 # Utility function to safely load environment variables with fallback
 def get_env_variable(var_name, default_value):
-    return os.getenv(var_name) or default_value
+    # Check if the environment variable is set in the OS first.
+    env_value = os.getenv(var_name)
+    if env_value:
+        return env_value
+    return default_value
 
 # Function to load the logo as a base64 string
 def get_logo_base64():
@@ -201,4 +223,4 @@ def build_ui():
     return app
 
 if __name__ == "__main__":
-    build_ui().launch(server_port=7633)
+    build_ui().launch(server_port=7633, server_name=hostname, debug=False, show_api=False, width="100%", inbrowser=True)
