@@ -12,7 +12,7 @@ from utils.logger import setup_log
 from dotenv import load_dotenv
 
 # Load environment variables
-load_dotenv()
+load_dotenv(override=True)
 logger = setup_log()
 
 def get_hostname_and_os():
