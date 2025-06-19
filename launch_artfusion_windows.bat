@@ -6,6 +6,5 @@ cd /d "%SCRIPT_DIR%"
 echo Activating Conda environment...
 call conda activate %CONDA_ENV_NAME%
 echo Running Python script...
-call pip install python-dotenv
 call python "%SCRIPT_DIR%%PYTHON_SCRIPT%"
 pause
